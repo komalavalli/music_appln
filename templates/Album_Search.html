@@ -10,18 +10,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
      <style>
 .btn_back {
-    background-color: #12780f;
+    background-color: #780f44;
     border: none;
     color: white;
     padding: 12px 16px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 /* Darker background on mouse-over */
 .btn_back:hover {
-  background-color: #28e150;
+  background-color: #780f44;
 }
 </style>
 </head>
@@ -41,32 +41,18 @@
     </ul>
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="query" style="width: 70%">
       <button class="btn btn-outline-success my-2 my-sm-0" onclick="myFunction()">Search</button>
-      <p style="color: white">&nbsp;&nbsp;Type Of Search:&nbsp;&nbsp;</p>
-
-  <label class="block" style="color: white"><input type="radio" name="radgroup" id="Album">Album&nbsp;&nbsp;</label>
-  <label class="block" style="color: white"><input type="radio" name="radgroup" id="Songs">Songs</label>
+      
     <script>
 function myFunction() {
-  var x = document.getElementById("Album").checked;
-    var y = document.getElementById('Songs').checked;
-    if (x === true){
+  x = document.getElementById("query").value;
 
+      if (x) {
       query = document.getElementById("query").value;
-      window.open('/Album_Search?AlbumName='+query,"_self")
-
-    }
-
-    else if (y === true){
-        query = document.getElementById("query").value;
         window.open('/search?songName='+query,"_self")
-
     }
-
     else {
-      query = document.getElementById("query").value;
-        window.open('/search?songName='+query,"_self")
+      alert("Enter Song/Album Name in the Input Box!");
     }
-
 }
 </script>
   </div>
@@ -91,10 +77,5 @@ function myFunction() {
   </div>
 </div>
 </div>
-</body>
-</html>
-
-
-
 </body>
 </html>
